@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fr.esilv.myapplication2.mobiledev.app" >
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,6 +18,23 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Station.StationsActivity"
+            android:label="@string/title_activity_stations"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="fr.esilv.myapplication2.mobiledev.app.MainActivity" />
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.APIKEY"
+            android:value="AIzaSyBKFLl38Nfo2sOpr9N0IdrxiUq25V-cBsE" />
+
+        <activity
+            android:name=".Station.MapActivity"
+            android:label="@string/title_activity_map" >
         </activity>
     </application>
 

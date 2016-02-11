@@ -3,4 +3,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="JCD_APIKey">c9a75485e6196f494cdd205f146d838f9f16def8</string>
+    <string name="title_activity_stations">StationsActivity</string>
+    <string name="title_activity_map">MapActivity</string>
 </resources>
