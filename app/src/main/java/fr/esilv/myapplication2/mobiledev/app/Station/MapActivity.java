@@ -1,5 +1,6 @@
 package fr.esilv.myapplication2.mobiledev.app.Station;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -23,6 +24,10 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.fragment_map);
         mapFragment.getMapAsync(this);
+        Intent income = getIntent();
+        name = income.getExtras().getString("name");
+        lat = Float.parseFloat(income.getExtras().getString("lat"));
+        lng = Float.parseFloat(income.getExtras().getString("lng"));
     }
 
     @Override

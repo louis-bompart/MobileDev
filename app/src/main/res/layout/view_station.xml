@@ -3,8 +3,17 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:padding="5dp">
+              android:padding="5dp"
+                android:onClick="onStationClick">
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/station_name"/>
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/station_address"/>
+    <TextView
+        android:id="@+id/station_lng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/station_lat"/>
 
 </LinearLayout>

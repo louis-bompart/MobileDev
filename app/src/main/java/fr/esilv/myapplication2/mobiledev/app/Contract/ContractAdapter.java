@@ -55,12 +55,6 @@ public class ContractAdapter extends RecyclerView.Adapter<ContractAdapter.ViewHo
             mName=(TextView) itemView.findViewById(R.id.contract_name);
             mCommercial = (TextView) itemView.findViewById(R.id.contract_commercial);
         }
-        public void onContractClick(View view) {
 
-            Toast.makeText(view.getContext(), "Moo !", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(view.getContext(), StationsActivity.class);
-            intent.putExtra("name",mName.getText());
-            view.getContext().startActivity(intent);
-        }
     }
 }

@@ -10,6 +10,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -18,6 +20,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import fr.esilv.myapplication2.mobiledev.app.R;
 
 public class StationsActivity extends AppCompatActivity {
@@ -73,7 +76,7 @@ public class StationsActivity extends AppCompatActivity {
 
                         @Override
                         public void onResponse(String response) {
-                            Gson gson = new Gson();
+                            Gson gson = new GsonBuilder().registerTypeAdapter(Station.Position.class, new MyDeserializer< Station.Position>()).create();
                             dataSet = gson.fromJson(response, Stations.class);
                             adapter.setmDataSet(dataSet);
                             adapter.notifyDataSetChanged();
@@ -101,5 +104,14 @@ public class StationsActivity extends AppCompatActivity {
         recyclerview.setLayoutManager(layoutManager);
         adapter = new StationAdapter(dataSet);
         recyclerview.setAdapter(adapter);
+    }
+
+    public void onStationClick(View view) {
+        Toast.makeText(view.getContext(), "Moo !", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(view.getContext(), MapActivity.class);
+        intent.putExtra("name",((TextView)view.findViewById(R.id.station_name)).getText());
+        intent.putExtra("lat",((TextView)view.findViewById(R.id.station_lat)).getText());
+        intent.putExtra("lng",((TextView)view.findViewById(R.id.station_lng)).getText());
+        view.getContext().startActivity(intent);
     }
 }

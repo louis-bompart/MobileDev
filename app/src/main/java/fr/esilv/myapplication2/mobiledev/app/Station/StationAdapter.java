@@ -44,11 +44,15 @@ public class StationAdapter extends RecyclerView.Adapter<StationAdapter.ViewHold
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView mName;
         public TextView mAddress;
+        public TextView mLat;
+        public TextView mLng;
 
         public ViewHolder(View itemView) {
             super(itemView);
             mName=(TextView) itemView.findViewById(R.id.station_name);
             mAddress = (TextView) itemView.findViewById(R.id.station_address);
+            mLat = (TextView) itemView.findViewById(R.id.station_lat);
+            mLng = (TextView) itemView.findViewById(R.id.station_lng);
         }
     }
 }

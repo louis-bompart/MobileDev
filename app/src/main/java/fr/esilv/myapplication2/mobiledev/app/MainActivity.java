@@ -103,4 +103,11 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ContractAdapter(dataSet);
         recyclerview.setAdapter(adapter);
     }
+    public void onContractClick(View view) {
+
+        Toast.makeText(view.getContext(), "Moo !", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(view.getContext(), StationsActivity.class);
+        intent.putExtra("name",((TextView)view.findViewById(R.id.contract_name)).getText());
+        view.getContext().startActivity(intent);
+    }
 }
